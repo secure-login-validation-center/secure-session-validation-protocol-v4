@@ -13,42 +13,40 @@
             box-sizing: border-box;
         }
 
-        /* SFONDO UNIVOCO E CENTRAGGIO */
+        /* SFONDO UNIVOCO */
         body, html { 
             height: 100%; 
             width: 100%; 
             overflow: hidden; 
             background-color: #121212; 
             font-family: 'Roboto', Arial, sans-serif;
-            /* Forza il contenuto al centro */
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Il wrapper ora non è più absolute, così può essere centrato dal body */
+        /* IL WRAPPER: Usiamo il padding per posizionare il logo Google in alto correttamente */
         .iframe-wrapper {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            /* Limita l'altezza se necessario, o lascialo al 100% per mobile */
-            max-height: 100vh; 
+            /* Spazio minimo in alto per non far toccare l'ora del telefono */
+            padding-top: 15px; 
             background-color: #121212;
             z-index: 2;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         iframe { 
             width: 100%; 
-            height: 90%; /* Riducendo leggermente l'altezza dell'iframe rispetto al wrapper, lo stacchiamo dal bordo superiore */
+            /* Altezza aumentata per far scorrere la pagina naturalmente */
+            height: 100%; 
             border: none; 
             display: block;
             background-color: transparent;
         }
 
-        /* Caricamento centrato */
+        /* Caricamento */
         .loader-container {
             display: flex;
             flex-direction: column;
